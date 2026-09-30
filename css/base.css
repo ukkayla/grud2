@@ -1,0 +1,33 @@
+:root{
+  --navy:#2F586E;
+  --navy-light:#3D6B84;
+  --navy-dark:#244659;
+  --gold:#2F586E;
+  --gold-dark:#244659;
+  --red:#B8822A;
+  --red-dark:#946825;
+  --gray-bg:#F5F1E8;
+  --gray-border:#E0D9C9;
+  --gray-card:#7A7A7A;
+  --text-dark:#333;
+  --text-muted:#666;
+  --white:#fff;
+  --steam-blue:#B8822A;
+  --steam-dark:#1E3A4A;
+  --steam-side:#244659;
+  --font-serif:'PT Serif',Georgia,serif;
+  --font-sans:'PT Sans',Arial,sans-serif;
+  --container:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);font-size:15px;line-height:1.55;color:var(--text-dark);background:#FAF6ED;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit;cursor:pointer}
+input,select{font-family:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+@media (max-width:520px){
+  .container{padding:0 16px}
+}

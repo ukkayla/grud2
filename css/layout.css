@@ -1,0 +1,152 @@
+/* ==================== HEADER ==================== */
+.header{background:var(--gold);color:var(--white);padding:24px 0}
+.header__inner{display:flex;align-items:center;gap:24px}
+.header__emblem{width:64px;height:72px;flex-shrink:0}
+.header__emblem img{width:100%;height:100%;object-fit:contain}
+.header__title{font-family:var(--font-serif);font-weight:700;font-size:26px;line-height:1.25}
+
+/* ==================== NAV ==================== */
+.nav{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:0;z-index:50}
+.nav__list{display:flex;flex-wrap:wrap;gap:36px;list-style:none;padding:14px 0}
+.nav__link{font-size:16px;color:var(--text-dark);padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s;background:none;border-top:none;border-left:none;border-right:none}
+.nav__link:hover{text-decoration:none;border-bottom-color:var(--gold)}
+.nav__link--active{border-bottom-color:var(--gold);font-weight:700}
+
+/* ==================== BREADCRUMBS / PAGE TITLE ==================== */
+.breadcrumbs{font-size:12px;color:var(--text-muted);padding:20px 0 0}
+.breadcrumbs a:hover{color:var(--gold-dark)}
+.breadcrumbs .sep{margin:0 6px;color:#bbb}
+.page-title{font-family:var(--font-serif);font-weight:400;font-size:32px;line-height:1.25;margin:12px 0 28px}
+.page{display:none}
+.page--active{display:block}
+
+/* ==================== FOOTER ==================== */
+.footer{background:#1E3A4A;color:#fff;padding:32px 0 20px;font-size:12px;line-height:1.6;margin-top:40px}
+.footer__stats{text-align:center;font-weight:700;font-size:13px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:22px;color:#D9A94F}
+.footer__inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:18px}
+.footer__text{max-width:560px;color:rgba(255,255,255,.75)}
+.footer__text p{margin-bottom:4px}
+.footer__text a{color:#D9A94F;text-decoration:underline}
+.footer__logos{display:flex;gap:28px;align-items:center;flex-shrink:0;flex-wrap:wrap}
+.footer__logo{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:10px;line-height:1.2;text-transform:uppercase;letter-spacing:.5px}
+.footer__logo img{max-height:60px;width:auto;object-fit:contain;filter:brightness(0) invert(1)}
+
+/* ==================== АДАПТИВ LAYOUT ==================== */
+@media (max-width:860px){
+  .header__title{font-size:20px}
+  .header__emblem{width:48px;height:54px}
+  .nav{position:static}
+  .nav__list{gap:20px}
+  .nav__link{font-size:14px}
+  .page-title{font-size:24px}
+  .footer__inner{flex-direction:column}
+  .footer__logos{flex-wrap:wrap}
+}
+@media (max-width:520px){
+  .header__title{font-size:17px}
+}
+/* ==================== БУРГЕР И ЗАТЕМНЕНИЕ ==================== */
+.nav__burger{
+  display:none;
+  width:44px;height:44px;
+  flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  padding:10px;
+  background:rgba(255,255,255,.12);
+  border:none;border-radius:4px;cursor:pointer;
+  transition:background .2s;
+  flex-shrink:0;
+}
+.nav__burger:hover{background:rgba(255,255,255,.22)}
+.nav__burger-line{
+  display:block;width:22px;height:2px;
+  background:#fff;border-radius:2px;
+  transition:transform .3s, opacity .2s, background .2s;
+}
+.nav__burger:hover .nav__burger-line{background:#fff}
+
+/* Трансформация в крестик при открытом меню */
+body.menu-open .nav__burger-line:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .nav__burger-line:nth-child(2){opacity:0}
+body.menu-open .nav__burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav-backdrop{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:80;
+  opacity:0;visibility:hidden;
+  transition:opacity .25s, visibility .25s;
+}
+.nav-backdrop.is-visible{opacity:1;visibility:visible}
+
+/* ==================== МОБИЛЬНАЯ ШАПКА + МЕНЮ ==================== */
+@media (max-width:860px){
+  :root{ --header-h:64px; }
+
+  /* Шапка — фиксируется сверху, эмблема остаётся в углу */
+  .header{
+    position:sticky;top:0;z-index:100;
+    padding:0;
+    height:var(--header-h);
+  }
+  .header__inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:0;width:100%;height:100%;
+  }
+  .header__emblem{
+    width:42px;height:46px;
+    /* если шапка тёмная, эмблема видна; при желании добавьте filter:brightness(1) */
+  }
+  .header__title{display:none}
+
+  /* Показываем бургер в шапке */
+  .nav__burger{display:flex}
+
+  /* Панель меню — выезжает справа, ниже шапки */
+  .nav{
+    position:static;
+    border-bottom:none;
+    background:transparent;
+  }
+  .nav__inner{display:contents}
+
+  .nav__list{
+    position:fixed;
+    top:var(--header-h);
+    right:0;
+    bottom:0;
+    width:82%;
+    max-width:340px;
+    background:#fff;
+    flex-direction:column;flex-wrap:nowrap;
+    gap:0;
+    padding:16px 0 24px;
+    margin:0;
+    transform:translateX(100%);
+    transition:transform .3s cubic-bezier(.4,0,.2,1);
+    z-index:90;
+    overflow-y:auto;
+    box-shadow:-10px 0 30px rgba(0,0,0,.15);
+    -webkit-overflow-scrolling:touch;
+  }
+  body.menu-open .nav__list{transform:translateX(0)}
+
+  .nav__link{
+    display:block;width:100%;text-align:left;
+    padding:16px 24px;
+    font-size:16px;
+    border:none;border-bottom:1px solid var(--gray-border);
+    border-left:3px solid transparent;border-radius:0;
+    transition:background .15s, border-left-color .15s, padding-left .15s;
+  }
+  .nav__list li:last-child .nav__link{border-bottom:none}
+  .nav__link:hover,
+  .nav__link--active{
+    background:var(--gray-bg);
+    border-left-color:var(--gold);
+    padding-left:28px;
+    text-decoration:none;
+  }
+
+  /* Блокируем скролл страницы при открытом меню */
+  body.menu-open{overflow:hidden}
+}

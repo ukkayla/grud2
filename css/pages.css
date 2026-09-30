@@ -1,0 +1,83 @@
+/* ==================== УКАЗАТЕЛИ ==================== */
+.index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px;margin-bottom:24px}
+.index-item{padding:9px 0;border-bottom:1px solid #ececec;font-size:14px}
+.index-item a:hover{color:var(--gold-dark)}
+
+/* ==================== ПОИСК ==================== */
+.search-layout{display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start}
+.search-meta{font-size:13px;color:var(--text-muted);margin-bottom:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.search-meta strong{color:var(--text-dark)}
+.empty-state{padding:48px 24px;text-align:center;color:var(--text-muted);background:var(--gray-bg);font-size:15px}
+.empty-state strong{display:block;color:var(--text-dark);margin-bottom:6px;font-size:17px}
+
+.sidebar__title{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:10px}
+.sidebar__reset{margin-bottom:14px}
+.accordion{border:1px solid var(--gray-border);background:var(--white)}
+.accordion__group{border-bottom:1px solid var(--gray-border)}
+.accordion__group:last-child{border-bottom:none}
+.accordion__item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 14px;font-size:14px;cursor:pointer;transition:background .2s;
+  background:none;border:none;width:100%;text-align:left;font-family:inherit;color:var(--text-dark);
+}
+.accordion__item:hover{background:#f7f7f7}
+.accordion__item-left{display:flex;align-items:center;gap:8px}
+.accordion__badge{background:var(--gold);color:var(--white);font-size:11px;font-weight:700;border-radius:10px;padding:1px 7px;line-height:1.4;min-width:18px;text-align:center}
+.accordion__plus{font-size:18px;color:var(--text-muted);line-height:1;transition:transform .2s;display:inline-block}
+.accordion__group.open .accordion__plus{transform:rotate(45deg)}
+.accordion__panel{max-height:0;overflow:hidden;transition:max-height .25s ease;background:#fafafa}
+.accordion__group.open .accordion__panel{max-height:320px;overflow-y:auto;border-top:1px solid var(--gray-border)}
+.accordion__option{display:flex;align-items:center;gap:8px;padding:7px 14px 7px 18px;font-size:13px;cursor:pointer}
+.accordion__option:hover{background:#f0f0f0}
+.accordion__option input{accent-color:var(--gold);cursor:pointer}
+
+/* ==================== ДЕТАЛЬНАЯ ДОКУМЕНТА ==================== */
+.detail__topline{font-size:12px;color:var(--text-muted);padding:16px 0 4px;line-height:1.7}
+.detail__topline .label{color:#7a7a7a;margin-right:4px}
+.detail__topline a{color:#2F586E;text-decoration:underline}
+.detail__headline{font-family:var(--font-serif);font-weight:700;font-size:30px;line-height:1.25;margin:24px 0 6px}
+.detail__intro{
+  display:grid;grid-template-columns:auto 1fr;gap:6px 24px;
+  padding:18px 0 22px;border-bottom:1px solid var(--gray-border);margin-bottom:24px;
+}
+.detail__intro .detail__key{color:#7a7a7a;font-size:13px;padding:3px 0}
+.detail__intro .detail__val{color:var(--text-dark);font-weight:700;font-size:14px;padding:3px 0}
+.detail__section{margin-bottom:22px}
+.detail__row{display:grid;grid-template-columns:280px 1fr;gap:16px;padding:6px 0}
+.detail__row .detail__label{color:#7a7a7a;font-size:13.5px;line-height:1.65}
+.detail__row .detail__value{color:var(--text-dark);font-size:14px;line-height:1.65}
+.detail__row--full{grid-template-columns:1fr}
+.detail__row--full .detail__label{font-weight:700;color:var(--text-dark);margin-bottom:6px;font-size:13.5px}
+.detail__row--full .detail__value{background:#F5F1E8;border-left:3px solid var(--gold);padding:12px 16px;line-height:1.75}
+.detail__group{padding:14px 0;border-bottom:1px dashed #e6e6e6}
+.detail__group:last-child{border-bottom:none}
+.detail__group-title{font-family:var(--font-serif);font-size:16px;font-weight:700;margin-bottom:10px}
+
+.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:24px 0 32px}
+.gallery__item{cursor:pointer;transition:transform .15s}
+.gallery__item:hover{transform:translateY(-2px)}
+.gallery__img{aspect-ratio:3/4;background:#fdf6e3;border:1px solid #d8c9a8;position:relative;overflow:hidden;margin-bottom:6px}
+.gallery__img::before{content:'';position:absolute;inset:8%;background:repeating-linear-gradient(180deg,transparent 0 14px,#c9b88f 14px 15px),repeating-linear-gradient(180deg,transparent 0 22px,#ddd0aa 22px 23px);opacity:.7}
+.gallery__caption{font-size:11px;color:#7a7a7a;line-height:1.4;word-break:break-all}
+
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#2F586E;text-decoration:none;margin-bottom:16px;padding:6px 0}
+.back-link:hover{color:var(--gold-dark);text-decoration:none}
+.back-link::before{content:'←';font-size:16px}
+
+/* ==================== АДАПТИВ PAGES ==================== */
+@media (max-width:960px){
+  .search-layout{grid-template-columns:1fr}
+  .index-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(4,1fr)}
+  .detail__row{grid-template-columns:220px 1fr}
+}
+@media (max-width:860px){
+  .detail__headline{font-size:24px}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .detail__row{grid-template-columns:1fr;gap:4px}
+  .detail__row .detail__label{font-weight:700;color:var(--text-dark);font-size:13px}
+}
+@media (max-width:520px){
+  .index-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
