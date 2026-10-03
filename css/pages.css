@@ -84,6 +84,26 @@
 /* ==================== КНОПКА ФИЛЬТРОВ (по умолчанию скрыта) ==================== */
 .filters-toggle{display:none}
 
+/* Общая обёртка формы поиска на десктопе */
+.filters--search{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-end;
+  gap:20px;
+}
+.filters--search .field{
+  flex:1;
+  min-width:280px;
+}
+.filters__actions{
+  display:flex;
+  gap:10px;
+}
+.filters__actions .btn{
+  height:36px;
+  padding:0 18px;
+}
+
 .filters-backdrop{
   position:fixed;inset:0;
   background:rgba(0,0,0,.5);
@@ -99,47 +119,96 @@
 
 /* ==================== МОБИЛЬНЫЕ ФИЛЬТРЫ (< 960px) ==================== */
 @media (max-width:960px){
-  /* Скрываем классический сайдбар, показываем кнопку */
-  .search-layout{display:block;position:relative}
 
-  .filters-toggle{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    margin:0 0 16px;
-    padding:10px 16px;
-    background:var(--gray-bg);
-    border:1px solid var(--gray-border);
-    border-radius:4px;
-    font-size:14px;
-    font-weight:700;
-    color:var(--text-dark);
-    cursor:pointer;
-    transition:background .2s, border-color .2s;
+  /* ============ ФОРМА ПОИСКА: 2 РЯДА ============ */
+  .filters--search{
+    display:block;
+    margin-bottom:14px;
   }
-  .filters-toggle:hover{background:#ece5d5;border-color:var(--gold)}
-  .filters-toggle__label{line-height:1}
+  .filters--search .field{
+    width:100%;
+    min-width:0;
+    margin-bottom:10px;
+  }
 
-  .filters-toggle__badge{
+  /* Три кнопки в ряд */
+  .filters__actions{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:8px;
+  }
+  .filters__actions .btn,
+  .filters__actions .filters-toggle{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    min-width:20px;height:20px;
-    padding:0 6px;
+    gap:6px;
+    width:100%;
+    height:44px;
+    padding:0 10px;
+    margin:0;
+    font-size:12.5px;
+    border-radius:4px;
+  }
+
+  /* Кнопка «Фильтры» */
+  .filters__actions .filters-toggle{
+    background:var(--gray-bg);
+    border:1px solid var(--gray-border);
+    color:var(--text-dark);
+    font-weight:700;
+    cursor:pointer;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    transition:background .2s, border-color .2s;
+  }
+  .filters__actions .filters-toggle:hover{
+    background:#ece5d5;
+    border-color:var(--gold);
+  }
+  .filters__actions .filters-toggle__label{line-height:1}
+
+  /* Красный счётчик */
+  .filters__actions .filters-toggle__badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:18px;
+    height:18px;
+    padding:0 5px;
     background:#e53935;
     color:#fff;
-    font-size:11px;
+    font-size:10.5px;
     font-weight:700;
-    border-radius:10px;
+    border-radius:9px;
     line-height:1;
+    margin-left:2px;
   }
-  .filters-toggle__icon{
-    display:inline-flex;
-    width:20px;height:20px;
-    color:var(--navy);
-  }
-  .filters-toggle__icon svg{width:100%;height:100%}
+  .filters__actions .filters-toggle__badge[hidden]{display:none}
 
+  /* Иконка фильтра */
+  .filters__actions .filters-toggle__icon{
+    display:inline-flex;
+    width:16px;
+    height:16px;
+    color:var(--navy);
+    flex-shrink:0;
+  }
+  .filters__actions .filters-toggle__icon svg{
+    width:100%;
+    height:100%;
+  }
+
+  /* Поле ввода — крупнее на мобильном */
+  .filters--search .field__input{
+    height:44px;
+    font-size:14px;
+  }
+}
+
+
+
+  
   /* Панель фильтров — выезжает снизу-вверх */
   .sidebar{
     position:fixed;
