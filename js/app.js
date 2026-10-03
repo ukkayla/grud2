@@ -288,3 +288,70 @@ renderSteamSlider();
 searchIndex = buildSearchIndex();
 initHeroSuggest();
 route();
+/* ==================== МОБИЛЬНЫЕ ФИЛЬТРЫ ==================== */
+(function initMobileFilters(){
+  const toggle   = document.getElementById('filtersToggle');
+  const sidebar  = document.getElementById('sidebar');
+  const closeBtn = document.getElementById('sidebarClose');
+  const applyBtn = document.getElementById('sidebarApply');
+  const backdrop = document.getElementById('filtersBackdrop');
+  if(!toggle || !sidebar) return;
+
+  function openFilters(){
+    sidebar.classList.add('is-open');
+    backdrop?.classList.add('is-visible');
+    document.body.classList.add('filters-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeFilters(){
+    sidebar.classList.remove('is-open');
+    backdrop?.classList.remove('is-visible');
+    document.body.classList.remove('filters-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', () => {
+    sidebar.classList.contains('is-open') ? closeFilters() : openFilters();
+  });
+
+  closeBtn?.addEventListener('click', closeFilters);
+  applyBtn?.addEventListener('click', closeFilters);
+  backdrop?.addEventListener('click', closeFilters);
+
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && sidebar.classList.contains('is-open')) closeFilters();
+  });
+
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 960 && sidebar.classList.contains('is-open')) closeFilters();
+  });
+
+  /* Счётчик активных фильтров на кнопке */
+  const countEl = document.getElementById('filtersCount');
+  function updateFiltersCount(){
+    const n = (typeof activeFilters !== 'undefined' && activeFilters) ? activeFilters.size : 0;
+    if(!countEl) return;
+    if(n > 0){
+      countEl.hidden = false;
+      countEl.textContent = n;
+    } else {
+      countEl.hidden = true;
+    }
+  }
+
+  // Обновляем счётчик после изменений в аккордеоне
+  const accordion = document.getElementById('sidebarAccordion');
+  accordion?.addEventListener('change', updateFiltersCount);
+
+  // И после сброса
+  document.getElementById('sidebarReset')?.addEventListener('click', () => {
+    setTimeout(updateFiltersCount, 0);
+  });
+
+  // И при инициализации
+  updateFiltersCount();
+
+  // Публичный вызов из других мест (например, после renderSearch)
+  window.updateFiltersCount = updateFiltersCount;
+})();
