@@ -6,6 +6,34 @@
 .header__title{font-family:var(--font-serif);font-weight:700;font-size:26px;line-height:1.25}
 .header__title-short{display:none}
 
+/* ==================== БУРГЕР (базовые стили) ==================== */
+.nav__burger{
+  display:none;
+  width:44px;
+  height:44px;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  padding:10px;
+  background:rgba(255,255,255,.12);
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  transition:background .2s;
+  flex-shrink:0;
+}
+.nav__burger:hover{background:rgba(255,255,255,.22)}
+.nav__burger-line{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#fff;
+  border-radius:2px;
+  transition:transform .3s, opacity .2s, background .2s;
+}
+.nav__burger:hover .nav__burger-line{background:#fff}
+
 /* ==================== NAV ==================== */
 .nav{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:0;z-index:50}
 .nav__list{display:flex;flex-wrap:wrap;gap:36px;list-style:none;padding:14px 0}
@@ -135,35 +163,18 @@
 @media (max-width:520px){
   .header__title{font-size:17px}
 }
-/* ==================== БУРГЕР И ЗАТЕМНЕНИЕ ==================== */
-.nav__burger{
-  display:none;
-  width:44px;height:44px;
-  flex-direction:column;justify-content:center;align-items:center;gap:5px;
-  padding:10px;
-  background:rgba(255,255,255,.12);
-  border:none;border-radius:4px;cursor:pointer;
-  transition:background .2s;
-  flex-shrink:0;
-}
-.nav__burger:hover{background:rgba(255,255,255,.22)}
-.nav__burger-line{
-  display:block;width:22px;height:2px;
-  background:#fff;border-radius:2px;
-  transition:transform .3s, opacity .2s, background .2s;
-}
-.nav__burger:hover .nav__burger-line{background:#fff}
-
-/* Трансформация в крестик при открытом меню */
+/* ==================== ТРАНСФОРМАЦИЯ БУРГЕРА + ЗАТЕМНЕНИЕ ==================== */
 body.menu-open .nav__burger-line:nth-child(1){transform:translateY(7px) rotate(45deg)}
 body.menu-open .nav__burger-line:nth-child(2){opacity:0}
 body.menu-open .nav__burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 .nav-backdrop{
-  position:fixed;inset:0;
+  position:fixed;
+  inset:0;
   background:rgba(0,0,0,.5);
   z-index:80;
-  opacity:0;visibility:hidden;
+  opacity:0;
+  visibility:hidden;
   transition:opacity .25s, visibility .25s;
 }
 .nav-backdrop.is-visible{opacity:1;visibility:visible}
