@@ -279,30 +279,38 @@
   <section class="page" data-page="search">
     <div class="breadcrumbs"><a href="#">Главная</a></div>
     <h2 class="page-title">Поиск по Реестру уникальных документов</h2>
-    <form class="filters" onsubmit="return false;">
-      <div class="field" style="flex:1;min-width:280px">
-        <label class="field__label">Полнотекстовый поиск</label>
-        <input class="field__input" id="searchQuery" type="text" placeholder="Введите слово или фразу...">
-      </div>
-      <button class="btn btn--gold" type="button" id="searchApply">Искать</button>
-      <button class="btn" type="button" id="searchReset">Сброс</button>
-    </form>
-<!-- Кнопка фильтров — видна только на мобильном/планшете -->
-<button class="filters-toggle" type="button" id="filtersToggle" aria-expanded="false" aria-controls="sidebar">
-  <span class="filters-toggle__label">Фильтры</span>
-  <span class="filters-toggle__badge" id="filtersCount" hidden>0</span>
-  <span class="filters-toggle__icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="4" y1="6" x2="20" y2="6"/>
-      <line x1="4" y1="12" x2="20" y2="12"/>
-      <line x1="4" y1="18" x2="20" y2="18"/>
-      <circle cx="9" cy="6" r="2" fill="#fff"/>
-      <circle cx="15" cy="12" r="2" fill="#fff"/>
-      <circle cx="9" cy="18" r="2" fill="#fff"/>
-    </svg>
-  </span>
-</button>
+    <form class="filters filters--search" onsubmit="return false;">
+  <div class="field">
+    <label class="field__label">Полнотекстовый поиск</label>
+    <input class="field__input" id="searchQuery" type="text" placeholder="Введите слово или фразу...">
+  </div>
 
+  <div class="filters__actions">
+    <button class="btn btn--gold" type="button" id="searchApply">Искать</button>
+
+    <button class="filters-toggle" type="button" id="filtersToggle"
+            aria-expanded="false" aria-controls="sidebar">
+      <span class="filters-toggle__label">Фильтры</span>
+      <span class="filters-toggle__badge" id="filtersCount" hidden>0</span>
+      <span class="filters-toggle__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+          <circle cx="9" cy="6" r="2" fill="#fff"/>
+          <circle cx="15" cy="12" r="2" fill="#fff"/>
+          <circle cx="9" cy="18" r="2" fill="#fff"/>
+        </svg>
+      </span>
+    </button>
+
+    <button class="btn" type="button" id="searchReset">Сброс</button>
+  </div>
+</form>
+    
+    
+<!-- Кнопка фильтров — видна только на мобильном/планшете -->
 <div class="search-layout">
   <div>
     <div class="search-meta" id="searchMeta"></div>
