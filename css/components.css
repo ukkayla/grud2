@@ -573,9 +573,16 @@
 }
 @media (max-width:1000px){
   .home-blocks{grid-template-columns:1fr}
-  .steam-slider{grid-template-columns:1fr;height:auto;min-height:480px}
+
+  /* Скрываем правую колонку с цифровыми образами */
+  .steam-slider{
+    grid-template-columns:1fr;
+    height:auto;
+    min-height:0;
+  }
+  .steam-slider__gallery{display:none}
   .steam-slider__stage{height:380px}
-  .steam-slider__gallery{max-height:320px;border-left:none;border-top:1px solid rgba(184,130,42,.18)}
+
   .slide-banner__title{font-size:22px}
   .slide-banner__content{padding:24px 28px}
 }
