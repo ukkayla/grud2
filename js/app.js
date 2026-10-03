@@ -79,7 +79,12 @@ function renderSearch(){
   el('searchResults').innerHTML = filtered.length
     ? filtered.map(renderDocumentCard).join('')
     : renderEmpty('Ничего не найдено','Попробуйте изменить запрос или сбросить фильтры.');
+
+  /* Обновляем счётчик активных фильтров на кнопке */
+  if(typeof window.updateFiltersCount === 'function') window.updateFiltersCount();
 }
+
+
 el('searchQuery').addEventListener('input', renderSearch);
 el('searchApply').addEventListener('click', renderSearch);
 el('searchReset').addEventListener('click', ()=>{ el('searchQuery').value=''; activeFilters.clear(); syncSidebarCheckboxes(); renderSearch(); });
