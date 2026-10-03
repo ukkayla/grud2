@@ -81,3 +81,172 @@
   .index-grid{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
 }
+/* ==================== КНОПКА ФИЛЬТРОВ (по умолчанию скрыта) ==================== */
+.filters-toggle{display:none}
+
+.filters-backdrop{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:120;
+  opacity:0;visibility:hidden;
+  transition:opacity .25s, visibility .25s;
+}
+.filters-backdrop.is-visible{opacity:1;visibility:visible}
+
+.sidebar__head{display:none}
+.sidebar__close{display:none}
+.sidebar__foot{display:none}
+
+/* ==================== МОБИЛЬНЫЕ ФИЛЬТРЫ (< 960px) ==================== */
+@media (max-width:960px){
+  /* Скрываем классический сайдбар, показываем кнопку */
+  .search-layout{display:block;position:relative}
+
+  .filters-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 16px;
+    padding:10px 16px;
+    background:var(--gray-bg);
+    border:1px solid var(--gray-border);
+    border-radius:4px;
+    font-size:14px;
+    font-weight:700;
+    color:var(--text-dark);
+    cursor:pointer;
+    transition:background .2s, border-color .2s;
+  }
+  .filters-toggle:hover{background:#ece5d5;border-color:var(--gold)}
+  .filters-toggle__label{line-height:1}
+
+  .filters-toggle__badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:20px;height:20px;
+    padding:0 6px;
+    background:#e53935;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    border-radius:10px;
+    line-height:1;
+  }
+  .filters-toggle__icon{
+    display:inline-flex;
+    width:20px;height:20px;
+    color:var(--navy);
+  }
+  .filters-toggle__icon svg{width:100%;height:100%}
+
+  /* Панель фильтров — выезжает снизу-вверх */
+  .sidebar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    top:auto;
+    max-height:85vh;
+    background:#fff;
+    z-index:130;
+    display:flex;
+    flex-direction:column;
+    transform:translateY(100%);
+    transition:transform .3s cubic-bezier(.4,0,.2,1);
+    box-shadow:0 -10px 30px rgba(0,0,0,.15);
+    border-radius:12px 12px 0 0;
+    overflow:hidden;
+  }
+  .sidebar.is-open{transform:translateY(0)}
+
+  /* Шапка панели */
+  .sidebar__head{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    padding:18px 56px 14px;
+    border-bottom:1px solid var(--gray-border);
+    flex-shrink:0;
+  }
+  .sidebar__head .sidebar__title{
+    font-size:16px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    color:var(--text-dark);
+    margin:0;
+  }
+  .sidebar__close{
+    display:flex;
+    align-items:center;justify-content:center;
+    position:absolute;
+    top:14px;right:14px;
+    width:36px;height:36px;
+    padding:0;
+    background:none;
+    border:none;
+    color:#999;
+    cursor:pointer;
+    border-radius:4px;
+    transition:color .2s, background .2s;
+  }
+  .sidebar__close:hover{color:var(--red);background:var(--gray-bg)}
+  .sidebar__close svg{width:20px;height:20px}
+
+  /* Прокручиваемое тело */
+  .sidebar__body{
+    flex:1;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 0 12px;
+  }
+  .sidebar__body .accordion{
+    border:none;
+    border-radius:0;
+  }
+  .sidebar__body .accordion__group{
+    border-bottom:1px solid var(--gray-border);
+  }
+  .sidebar__body .accordion__item{
+    padding:14px 20px;
+    font-size:15px;
+  }
+  .sidebar__body .accordion__option{
+    padding:10px 20px;
+    font-size:14px;
+  }
+
+  /* Футер с кнопками */
+  .sidebar__foot{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:10px;
+    padding:14px 16px;
+    border-top:1px solid var(--gray-border);
+    background:#fff;
+    flex-shrink:0;
+  }
+  .sidebar__apply{
+    padding:14px 20px;
+    font-size:13px;
+    height:auto;
+    border-radius:6px;
+  }
+  .sidebar__clear{
+    padding:14px 20px;
+    font-size:13px;
+    height:auto;
+    border-radius:6px;
+    background:#fff;
+    border:1px solid var(--red);
+    color:var(--red);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    transition:background .2s;
+  }
+  .sidebar__clear:hover{background:rgba(184,130,42,.12)}
+
+  /* Блокируем скролл при открытой панели */
+  body.filters-open{overflow:hidden}
+}
