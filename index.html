@@ -287,17 +287,51 @@
       <button class="btn btn--gold" type="button" id="searchApply">Искать</button>
       <button class="btn" type="button" id="searchReset">Сброс</button>
     </form>
-    <div class="search-layout">
-      <div>
-        <div class="search-meta" id="searchMeta"></div>
-        <div id="searchResults"></div>
-      </div>
-      <aside class="sidebar">
-        <div class="sidebar__title">Фильтры</div>
-        <button class="btn btn--link sidebar__reset" type="button" id="sidebarReset">Сбросить все фильтры</button>
-        <div class="accordion" id="sidebarAccordion"></div>
-      </aside>
+<!-- Кнопка фильтров — видна только на мобильном/планшете -->
+<button class="filters-toggle" type="button" id="filtersToggle" aria-expanded="false" aria-controls="sidebar">
+  <span class="filters-toggle__label">Фильтры</span>
+  <span class="filters-toggle__badge" id="filtersCount" hidden>0</span>
+  <span class="filters-toggle__icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="6" x2="20" y2="6"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="18" x2="20" y2="18"/>
+      <circle cx="9" cy="6" r="2" fill="#fff"/>
+      <circle cx="15" cy="12" r="2" fill="#fff"/>
+      <circle cx="9" cy="18" r="2" fill="#fff"/>
+    </svg>
+  </span>
+</button>
+
+<div class="search-layout">
+  <div>
+    <div class="search-meta" id="searchMeta"></div>
+    <div id="searchResults"></div>
+  </div>
+
+  <div class="filters-backdrop" id="filtersBackdrop" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__head">
+      <div class="sidebar__title">Фильтры</div>
+      <button class="sidebar__close" type="button" id="sidebarClose" aria-label="Закрыть фильтры">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
+
+    <div class="sidebar__body">
+      <div class="accordion" id="sidebarAccordion"></div>
+    </div>
+
+    <div class="sidebar__foot">
+      <button class="btn btn--red sidebar__apply" type="button" id="sidebarApply">Применить</button>
+      <button class="btn btn--outline sidebar__clear" type="button" id="sidebarReset">Сбросить</button>
+    </div>
+  </aside>
+</div>
+    
   </section>
 
   <!-- ДЕТАЛЬНАЯ ДОКУМЕНТА -->
