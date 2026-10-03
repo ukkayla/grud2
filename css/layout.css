@@ -4,6 +4,7 @@
 .header__emblem{width:64px;height:72px;flex-shrink:0}
 .header__emblem img{width:100%;height:100%;object-fit:contain}
 .header__title{font-family:var(--font-serif);font-weight:700;font-size:26px;line-height:1.25}
+.header__title-short{display:none}
 
 /* ==================== NAV ==================== */
 .nav{background:var(--white);border-bottom:1px solid var(--gray-border);position:sticky;top:0;z-index:50}
@@ -41,6 +42,30 @@
   .page-title{font-size:24px}
   .footer__inner{flex-direction:column}
   .footer__logos{flex-wrap:wrap}
+
+    /* Показываем короткий заголовок в шапке */
+  .header__title{
+    display:block;
+    font-size:15px;
+    line-height:1.25;
+    flex:1;
+    min-width:0;
+  }
+  /* Сокращаем текст: скрываем <br> и текст после него */
+  .header__title br,
+  .header__title br + *{display:none}
+  .header__title::after{content:"Государственный реестр уникальных документов"}
+  .header__title span{display:none}
+  .header__emblem{display:none}
+  .header__title{
+    display:block;
+    font-size:15px;
+    line-height:1.25;
+    flex:1;
+    min-width:0;
+  }
+  .header__title-full{display:none}
+  .header__title-short{display:block}
 }
 @media (max-width:520px){
   .header__title{font-size:17px}
