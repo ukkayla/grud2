@@ -16,6 +16,7 @@ const documents = [
     physicalState:'Хорошее', restorationNeed:'Удаление следов реставрации.',
     restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'24 октября 2002 г.', company:'—', sum:'3 171 000'},
     presentedBy:'ГА РФ', epkProtocol:'от 1 ноября 2002 г. № 11', cepkProtocol:'от 25 апреля 2003 г. № 2',
+    preview: 'assets/images/p1.jpg',
     images:15, tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1918','type:Конституция','keyword:конституция','keyword:РСФСР','person:Свердлов Я.М.','geo:Москва','district:Центральный','subject:Москва','republic:РСФСР','region:Московская','city:Москва']
   },
   { n:'2', year:'2003', t:'Конституции (Основной Закон) СССР (5 декабря 1936 г.)', s:'Конституция СССР 1936 г.', d:'5 декабря 1936 г.', type:'конституция',
