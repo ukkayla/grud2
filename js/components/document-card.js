@@ -1,12 +1,15 @@
 /* ==================== КАРТОЧКА ДОКУМЕНТА ==================== */
 function renderDocumentCard(d){
   return `
-    <article class="card" data-doc-id="${d.n}" tabindex="0" role="link" aria-label="Открыть документ ${escapeHtml(d.t)}">
-      `<div class="card__thumb">
-   <div class="card__thumb-paper">
-     <img src="${doc.preview}" alt="${doc.title}" loading="lazy" width="480" height="640">
-   </div>
- </div>`
+    <article class="card" data-doc-id="${d.n}" tabindex="0" role="link"
+             aria-label="Открыть документ ${escapeHtml(d.t)}">
+      <div class="card__thumb">
+        <div class="card__thumb-paper">
+          ${d.preview
+            ? `<img src="${d.preview}" alt="${escapeHtml(d.t)}" loading="lazy" width="480" height="640">`
+            : ''}
+        </div>
+      </div>
       <div class="card__body">
         <div class="card__header">
           <span>${escapeHtml(d.t)}</span>
