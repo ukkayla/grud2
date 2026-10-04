@@ -715,3 +715,26 @@
   .home-block__body{padding-bottom:0}
   .home-block.open{padding-bottom:22px}
 }
+
+/* === Адаптив для вкладок «Архивы-хранители» на экранах ≤686px === */
+@media (max-width: 686px) {
+  .tabs {
+    flex-wrap: nowrap;                  /* 1. Запрещаем перенос на новую строку */
+    overflow-x: auto;                   /* 2. Включаем горизонтальную прокрутку */
+    -webkit-overflow-scrolling: touch;  /* 3. Плавная прокрутка на iOS */
+    scrollbar-width: none;              /* 4. Скрываем скроллбар в Firefox */
+    scroll-snap-type: x mandatory;      /* 5. Включаем «прилипание» по горизонтали */
+    scroll-padding-left: 16px;          /* 6. Отступ слева при прилипании */
+    padding-bottom: 4px;                /* 7. Небольшой отступ, чтобы border-bottom не обрезался */
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;                      /* Скрываем скроллбар в Chrome / Safari / Edge */
+  }
+
+  .tab {
+    flex: 0 0 auto;                     /* Запрещаем вкладкам сжиматься */
+    white-space: nowrap;                /* Запрещаем перенос текста внутри вкладки */
+    scroll-snap-align: start;           /* Каждая вкладка «прилипает» к левому краю */
+  }
+}
