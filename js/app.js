@@ -360,3 +360,48 @@ route();
   // Публичный вызов из других мест (например, после renderSearch)
   window.updateFiltersCount = updateFiltersCount;
 })();
+
+/* ==================== АККОРДЕОН НА ГЛАВНОЙ ==================== */
+(function initHomeAccordion(){
+  const blocks = document.querySelectorAll('.home-block[data-accordion]');
+  if(!blocks.length) return;
+
+  function isMobile(){
+    return window.matchMedia('(max-width: 1000px)').matches;
+  }
+
+  blocks.forEach(block => {
+    const btn = block.querySelector('.home-block__title');
+    if(!btn) return;
+
+    btn.addEventListener('click', () => {
+      if(!isMobile()) return; // на десктопе не реагируем
+
+      const willOpen = !block.classList.contains('open');
+
+      // По желанию: закрываем остальные при открытии текущего.
+      // Если хотите — уберите этот блок, чтобы можно было открыть несколько.
+      if(willOpen){
+        blocks.forEach(other => {
+          if(other !== block){
+            other.classList.remove('open');
+            other.querySelector('.home-block__title')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      block.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // При развороте окна на десктоп — сбрасываем все открытые состояния
+  window.addEventListener('resize', () => {
+    if(!isMobile()){
+      blocks.forEach(block => {
+        block.classList.remove('open');
+        block.querySelector('.home-block__title')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
