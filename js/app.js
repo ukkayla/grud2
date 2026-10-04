@@ -366,6 +366,13 @@ route();
   const blocks = document.querySelectorAll('.home-block[data-accordion]');
   if(!blocks.length) return;
 
+  // Синхронизируем aria-expanded с классом open при загрузке
+  blocks.forEach(block => {
+    const btn = block.querySelector('.home-block__title');
+    if(!btn) return;
+    btn.setAttribute('aria-expanded', block.classList.contains('open') ? 'true' : 'false');
+  });
+
   function isMobile(){
     return window.matchMedia('(max-width: 1000px)').matches;
   }
