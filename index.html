@@ -99,101 +99,119 @@
 
     <div class="home-blocks">
 
-      <!-- Блок 1: Архивы-хранители -->
-      <div class="home-block home-block--dark">
-        <h3 class="home-block__title">Архивы-хранители</h3>
-        <p class="home-block__intro">Федеральные и региональные архивы, музеи и НКО — хранители уникальных документов Российской Федерации.</p>
-        <div class="home-block__sub">Категории архивов</div>
-        <div class="cat-list">
-          <a class="cat-item" href="#" data-nav="archives">
-            <span class="cat-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/>
-              </svg>
-            </span>
-            <span class="cat-item__body">
-              <span class="cat-item__title">Федеральные архивы</span>
-              <span class="cat-item__meta">13 учреждений</span>
-            </span>
-          </a>
-          <a class="cat-item" href="#" data-nav="archives">
-            <span class="cat-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 21s-8-7.5-8-12a8 8 0 1116 0c0 4.5-8 12-8 12z"/>
-                <circle cx="12" cy="9" r="3"/>
-              </svg>
-            </span>
-            <span class="cat-item__body">
-              <span class="cat-item__title">Региональные архивы</span>
-              <span class="cat-item__meta">6 учреждений</span>
-            </span>
-          </a>
-          <a class="cat-item" href="#" data-nav="archives">
-            <span class="cat-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 10l9-6 9 6M5 10v10h14V10M9 20v-6h6v6"/>
-              </svg>
-            </span>
-            <span class="cat-item__body">
-              <span class="cat-item__title">Музеи</span>
-              <span class="cat-item__meta">4 организации</span>
-            </span>
-          </a>
-          <a class="cat-item" href="#" data-nav="archives">
-            <span class="cat-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/>
-                <path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 2-3.5 4-3.5s3 1 3 3"/>
-              </svg>
-            </span>
-            <span class="cat-item__body">
-              <span class="cat-item__title">Некоммерческие организации</span>
-              <span class="cat-item__meta">3 организации</span>
-            </span>
-          </a>
-        </div>
-        <div class="home-block__cta">
-          <button class="btn btn--red" type="button" data-nav="archives">Открыть список архивов</button>
-        </div>
-      </div>
+  <!-- Блок 1: Архивы-хранители -->
+  <div class="home-block home-block--dark" data-accordion>
+    <button class="home-block__title" type="button" aria-expanded="false">
+      <span>Архивы-хранители</span>
+      <span class="home-block__chevron" aria-hidden="true"></span>
+    </button>
 
-      <!-- Блок 2: Именной указатель -->
-      <div class="home-block home-block--light">
-        <h3 class="home-block__title home-block__title--red">Именной указатель</h3>
-        <p class="home-block__intro">Алфавитный список персоналий, упомянутых в уникальных документах Государственного реестра.</p>
-        <div class="home-block__sub">Популярные персоналии</div>
-        <div class="popular-list">
-          <a class="popular-item" href="#" data-nav="names">Александр I <span class="popular-item__count">15 док.</span></a>
-          <a class="popular-item" href="#" data-nav="names">Александр III <span class="popular-item__count">5 док.</span></a>
-          <a class="popular-item" href="#" data-nav="names">Александр II <span class="popular-item__count">4 док.</span></a>
-          <a class="popular-item" href="#" data-nav="names">Алябьев Д. <span class="popular-item__count">2 док.</span></a>
-          <a class="popular-item" href="#" data-nav="names">Акинфов И.П. <span class="popular-item__count">2 док.</span></a>
-          <a class="popular-item" href="#" data-nav="names">Аксаков Л.И. <span class="popular-item__count">2 док.</span></a>
-        </div>
-        <div class="home-block__cta">
-          <button class="btn btn--red" type="button" data-nav="names">Весь указатель</button>
-        </div>
+    <div class="home-block__body">
+      <p class="home-block__intro">Федеральные и региональные архивы, музеи и НКО — хранители уникальных документов Российской Федерации.</p>
+      <div class="home-block__sub">Категории архивов</div>
+      <div class="cat-list">
+        <a class="cat-item" href="#" data-nav="archives">
+          <span class="cat-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/>
+            </svg>
+          </span>
+          <span class="cat-item__body">
+            <span class="cat-item__title">Федеральные архивы</span>
+            <span class="cat-item__meta">13 учреждений</span>
+          </span>
+        </a>
+        <a class="cat-item" href="#" data-nav="archives">
+          <span class="cat-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s-8-7.5-8-12a8 8 0 1116 0c0 4.5-8 12-8 12z"/>
+              <circle cx="12" cy="9" r="3"/>
+            </svg>
+          </span>
+          <span class="cat-item__body">
+            <span class="cat-item__title">Региональные архивы</span>
+            <span class="cat-item__meta">6 учреждений</span>
+          </span>
+        </a>
+        <a class="cat-item" href="#" data-nav="archives">
+          <span class="cat-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10l9-6 9 6M5 10v10h14V10M9 20v-6h6v6"/>
+            </svg>
+          </span>
+          <span class="cat-item__body">
+            <span class="cat-item__title">Музеи</span>
+            <span class="cat-item__meta">4 организации</span>
+          </span>
+        </a>
+        <a class="cat-item" href="#" data-nav="archives">
+          <span class="cat-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/>
+              <path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 2-3.5 4-3.5s3 1 3 3"/>
+            </svg>
+          </span>
+          <span class="cat-item__body">
+            <span class="cat-item__title">Некоммерческие организации</span>
+            <span class="cat-item__meta">3 организации</span>
+          </span>
+        </a>
       </div>
-
-      <!-- Блок 3: Географический указатель -->
-      <div class="home-block home-block--dark">
-        <h3 class="home-block__title">Географический указатель</h3>
-        <p class="home-block__intro">Топонимы, встречающиеся в описаниях уникальных документов Государственного реестра.</p>
-        <div class="home-block__sub">Популярные топонимы</div>
-        <div class="popular-list popular-list--dark">
-          <a class="popular-item" href="#" data-nav="geo">Александровка <span class="popular-item__count">10 док.</span></a>
-          <a class="popular-item" href="#" data-nav="geo">Австрия <span class="popular-item__count">6 док.</span></a>
-          <a class="popular-item" href="#" data-nav="geo">Азовское море <span class="popular-item__count">3 док.</span></a>
-          <a class="popular-item" href="#" data-nav="geo">Анадырь река <span class="popular-item__count">3 док.</span></a>
-          <a class="popular-item" href="#" data-nav="geo">Архангельск <span class="popular-item__count">3 док.</span></a>
-          <a class="popular-item" href="#" data-nav="geo">Армения <span class="popular-item__count">2 док.</span></a>
-        </div>
-        <div class="home-block__cta">
-          <button class="btn btn--red" type="button" data-nav="geo">Весь указатель</button>
-        </div>
+      <div class="home-block__cta">
+        <button class="btn btn--red" type="button" data-nav="archives">Открыть список архивов</button>
       </div>
-
     </div>
+  </div>
+
+  <!-- Блок 2: Именной указатель -->
+  <div class="home-block home-block--light" data-accordion>
+    <button class="home-block__title home-block__title--red" type="button" aria-expanded="false">
+      <span>Именной указатель</span>
+      <span class="home-block__chevron" aria-hidden="true"></span>
+    </button>
+
+    <div class="home-block__body">
+      <p class="home-block__intro">Алфавитный список персоналий, упомянутых в уникальных документах Государственного реестра.</p>
+      <div class="home-block__sub">Популярные персоналии</div>
+      <div class="popular-list">
+        <a class="popular-item" href="#" data-nav="names">Александр I <span class="popular-item__count">15 док.</span></a>
+        <a class="popular-item" href="#" data-nav="names">Александр III <span class="popular-item__count">5 док.</span></a>
+        <a class="popular-item" href="#" data-nav="names">Александр II <span class="popular-item__count">4 док.</span></a>
+        <a class="popular-item" href="#" data-nav="names">Алябьев Д. <span class="popular-item__count">2 док.</span></a>
+        <a class="popular-item" href="#" data-nav="names">Акинфов И.П. <span class="popular-item__count">2 док.</span></a>
+        <a class="popular-item" href="#" data-nav="names">Аксаков Л.И. <span class="popular-item__count">2 док.</span></a>
+      </div>
+      <div class="home-block__cta">
+        <button class="btn btn--red" type="button" data-nav="names">Весь указатель</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Блок 3: Географический указатель -->
+  <div class="home-block home-block--dark" data-accordion>
+    <button class="home-block__title" type="button" aria-expanded="false">
+      <span>Географический указатель</span>
+      <span class="home-block__chevron" aria-hidden="true"></span>
+    </button>
+
+    <div class="home-block__body">
+      <p class="home-block__intro">Топонимы, встречающиеся в описаниях уникальных документов Государственного реестра.</p>
+      <div class="home-block__sub">Популярные топонимы</div>
+      <div class="popular-list popular-list--dark">
+        <a class="popular-item" href="#" data-nav="geo">Александровка <span class="popular-item__count">10 док.</span></a>
+        <a class="popular-item" href="#" data-nav="geo">Австрия <span class="popular-item__count">6 док.</span></a>
+        <a class="popular-item" href="#" data-nav="geo">Азовское море <span class="popular-item__count">3 док.</span></a>
+        <a class="popular-item" href="#" data-nav="geo">Анадырь река <span class="popular-item__count">3 док.</span></a>
+        <a class="popular-item" href="#" data-nav="geo">Архангельск <span class="popular-item__count">3 док.</span></a>
+        <a class="popular-item" href="#" data-nav="geo">Армения <span class="popular-item__count">2 док.</span></a>
+      </div>
+      <div class="home-block__cta">
+        <button class="btn btn--red" type="button" data-nav="geo">Весь указатель</button>
+      </div>
+    </div>
+  </div>
+
+</div>
 
   </section>
 
