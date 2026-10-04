@@ -27,7 +27,9 @@ const documents = [
     published:'Известия ЦИК СССР, 1936', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. Р-3316. Оп. 1. Ед. хр. 1.', carrier:'Бумага', size:'30 × 22 см', volume:'24 листа',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'24 октября 2002 г.', company:'—', sum:'2 100 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:12,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p2.jpg',
+    images:12,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1936','type:Конституция','keyword:конституция','keyword:СССР','geo:Москва','district:Центральный','subject:Москва','republic:СССР','region:Московская','city:Москва']
   },
   { n:'3', year:'2003', t:'Декларация и договор об образовании СССР', s:'Декларация и договор об образовании СССР', d:'30 декабря 1922 г.', type:'Декларация',
@@ -38,7 +40,9 @@ const documents = [
     published:'Съезды Советов СССР. Т. 1', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. Р-3316. Оп. 1. Ед. хр. 2.', carrier:'Бумага', size:'34 × 24 см', volume:'8 листов',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'24 октября 2002 г.', company:'—', sum:'1 800 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:8,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—',
+    preview: 'assets/images/p3.jpg',
+    images:8,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1922','type:Декларация','keyword:СССР','geo:Москва','district:Центральный','subject:Москва','republic:СССР','region:Московская','city:Москва']
   },
   { n:'4', year:'2003', t:'Акт отречения от престола Николая II', s:'Акт отречения от престола императора Николая II', d:'2 марта 1917 г.', type:'Акт',
@@ -49,7 +53,9 @@ const documents = [
     published:'Отречение Николая II. Л., 1927', exhibited:'ГИМ, 2017', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2100а.', carrier:'Бумага', size:'35 × 22 см', volume:'2 листа',
     physicalState:'Удовлетворительное', restorationNeed:'Реставрация не требуется', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'15 января 2003 г.', company:'—', sum:'5 000 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:4,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p4.jpg',
+    images:4,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1917','type:Акт','author:Николай II','keyword:отречение','keyword:престол','person:Николай II','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'5', year:'2003', t:'Акт отречения великого князя Михаила Александровича', s:'Акт отречения великого князя Михаила Александровича', d:'3 марта 1917 г.', type:'Акт',
@@ -60,7 +66,9 @@ const documents = [
     published:'Отречение Николая II. Л., 1927', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2100б.', carrier:'Бумага', size:'35 × 22 см', volume:'1 лист',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'15 января 2003 г.', company:'—', sum:'3 500 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:3,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p5.jpg',
+    images:3,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1917','type:Акт','author:Михаил Александрович','keyword:отречение','keyword:престол','person:Михаил Александрович','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'6', year:'2004', t:'Манифест Николая II о роспуске 2 Государственной Думы', s:'Именной высочайший указ Правительствующему Сенату', d:'3 июня 1907 г.', type:'Манифест',
@@ -71,7 +79,9 @@ const documents = [
     published:'ПСЗ РИ. Собр. 3. Т. XXVII', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2210.', carrier:'Бумага', size:'36 × 23 см', volume:'2 листа',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'12 февраля 2004 г.', company:'—', sum:'2 800 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:5,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p6.jpg',
+    images:6,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1907','type:Манифест','author:Николай II','keyword:дума','person:Николай II','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'7', year:'2004', t:'Указ Николая II о переустройстве Государственного Совета', s:'Указ Николая II Правительствующему Сенату', d:'21 февраля 1906 г.', type:'Указ',
@@ -82,7 +92,9 @@ const documents = [
     published:'ПСЗ РИ. Собр. 3. Т. XXVI', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2205.', carrier:'Бумага', size:'36 × 23 см', volume:'3 листа',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'12 февраля 2004 г.', company:'—', sum:'2 400 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:6,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p7.jpg',
+    images:7,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1906','type:Указ','author:Николай II','keyword:дума','person:Николай II','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'8', year:'2005', t:'«...Учреждение Государственной Думы», утвержденное Николаем II', s:'Положение «Учреждение Государственной Думы»', d:'20 февраля 1906 г.', type:'Положение',
@@ -93,7 +105,9 @@ const documents = [
     published:'ПСЗ РИ. Собр. 3. Т. XXVI', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2204.', carrier:'Бумага', size:'36 × 23 см', volume:'4 листа',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'20 марта 2005 г.', company:'—', sum:'2 200 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:7,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p8.jpg',
+    images:7,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1906','type:Положение','author:Николай II','keyword:дума','person:Николай II','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'9', year:'2005', t:'«Основные государственные законы»', s:'Основные государственные законы', d:'1905–1906 гг.', type:'Положение',
@@ -104,7 +118,9 @@ const documents = [
     published:'Свод Законов РИ. Т. 1. Ч. 1', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2200.', carrier:'Бумага', size:'35 × 22 см', volume:'12 листов',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'20 марта 2005 г.', company:'—', sum:'3 000 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:10,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p9.jpg',
+    images:10,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1905','year:1906','type:Положение','keyword:законы','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'10', year:'2006', t:'Приказ Николая II о принятии обязанностей Верховного главнокомандующего', s:'Приказ Николая II армии и флоту', d:'23 августа 1915 г.', type:'Приказ',
@@ -115,7 +131,9 @@ const documents = [
     published:'—', exhibited:'—', ownership:'федеральная',
     storagePlace:'ГА РФ, Москва', archiveCode:'ГА РФ. Ф. 601. Оп. 1. Ед. хр. 2450.', carrier:'Бумага', size:'34 × 22 см', volume:'2 листа',
     physicalState:'Хорошее', restorationNeed:'Нет', restoration:{date:'—',org:'—',person:'—'}, insurance:{date:'10 марта 2006 г.', company:'—', sum:'3 300 000'},
-    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', images:4,
+    presentedBy:'ГА РФ', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p10.jpg',
+    images:4,
     tags:['level:Федеральный','archive:ГА РФ','century:XX','year:1915','type:Приказ','author:Николай II','keyword:армия','person:Николай II','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   },
   { n:'11', year:'2006', t:'Жалованная грамота Екатерины II дворянству', s:'Грамота на права, вольности и преимущества дворянства', d:'21 апреля 1785 г.', type:'Грамота',
@@ -126,7 +144,9 @@ const documents = [
     published:'ПСЗ РИ. Собр. 1. Т. XXII', exhibited:'—', ownership:'федеральная',
     storagePlace:'РГАДА, Москва', archiveCode:'РГАДА. Ф. 248. Оп. 1. Ед. хр. 100.', carrier:'Пергамен', size:'40 × 30 см', volume:'6 листов',
     physicalState:'Удовлетворительное', restorationNeed:'Реставрация', restoration:{date:'1995',org:'ВНИИР',person:'Иванов И.И.'}, insurance:{date:'1 апреля 2006 г.', company:'—', sum:'8 500 000'},
-    presentedBy:'РГАДА', epkProtocol:'—', cepkProtocol:'—', images:6,
+    presentedBy:'РГАДА', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p11.jpg', 
+    images:6,
     tags:['level:Федеральный','archive:РГАДА','century:XVIII','year:1785','type:Грамота','author:Екатерина II','keyword:дворянство','person:Екатерина II','geo:Москва','district:Центральный','subject:Москва','republic:РСФСР','region:Московская','city:Москва']
   },
   { n:'12', year:'2006', t:'Учредительный акт о создании Российской академии наук', s:'Указ об учреждении Академии наук и художеств', d:'28 января 1724 г.', type:'Указ',
@@ -137,7 +157,9 @@ const documents = [
     published:'ПСЗ РИ. Собр. 1. Т. VII', exhibited:'—', ownership:'федеральная',
     storagePlace:'РГАДА, Москва', archiveCode:'РГАДА. Ф. 9. Оп. 1. Ед. хр. 25.', carrier:'Бумага', size:'33 × 21 см', volume:'4 листа',
     physicalState:'Удовлетворительное', restorationNeed:'Реставрация', restoration:{date:'2001',org:'ВНИИР',person:'Петров П.П.'}, insurance:{date:'1 апреля 2006 г.', company:'—', sum:'6 000 000'},
-    presentedBy:'РГАДА', epkProtocol:'—', cepkProtocol:'—', images:5,
+    presentedBy:'РГАДА', epkProtocol:'—', cepkProtocol:'—', 
+    preview: 'assets/images/p12.jpg',   
+    images:5,
     tags:['level:Федеральный','archive:РГАДА','century:XVIII','year:1724','type:Указ','author:Пётр I','keyword:академия','person:Пётр I','geo:Санкт-Петербург','district:Северо-Западный','subject:Санкт-Петербург','region:Ленинградская','city:Санкт-Петербург']
   }
 ];
