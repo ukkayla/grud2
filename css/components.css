@@ -475,17 +475,30 @@
 .card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-1px);border-left-color:var(--gold-dark)}
 .card:hover .card__header{background:#244659}
 .card:hover .card__more::after{color:var(--gold-dark);text-decoration:underline}
-.card__thumb{flex-shrink:0;width:150px;background:#efe9dc;display:flex;align-items:center;justify-content:center;padding:14px;border-right:1px solid #e0d8c8}
 
-/* Контейнер для превью — сохраняем рамку-«бумагу» */
-.card__thumb-paper {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  background: #fdf6e3;
-  border: 1px solid #d8c9a8;
-  position: relative;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .15);
-  overflow: hidden;                 /* обрезаем картинку по рамке */
+/* --- Левая колонка с превью — занимает всю высоту карточки --- */
+.card__thumb{
+  flex-shrink:0;
+  width:150px;
+  background:#efe9dc;
+  display:flex;
+  align-items:stretch;          /* превью растягивается по высоте карточки */
+  justify-content:stretch;      /* и по ширине колонки */
+  padding:0;                    /* убираем внутренние отступы — картинка «в край» */
+  border-right:1px solid #e0d8c8;
+  overflow:hidden;
+}
+
+/* --- Контейнер превью: полностью заполняет .card__thumb --- */
+.card__thumb-paper{
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;            /* пропорции диктует сама карточка, а не 3/4 */
+  background:#fdf6e3;
+  border:none;                  /* рамку «бумаги» убираем */
+  box-shadow:none;              /* и тень тоже */
+  position:relative;
+  overflow:hidden;
 }
 
 /* Прячем декоративные линии-заглушку */
@@ -494,12 +507,12 @@
   display: none;
 }
 
-/* Само превью документа */
-.card__thumb-paper img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Само превью документа — на всю площадь */
+.card__thumb-paper img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;             /* или contain, если нельзя обрезать скан */
 }
 
 .card__body{flex:1;min-width:0;display:flex;flex-direction:column}
@@ -651,18 +664,22 @@
   .slide-banner__content{padding:24px 28px}
 }
 @media (max-width:860px){
-  
   .card{flex-direction:column}
-  .card__thumb {
-    width: 100%;
-    height: 200px;             /* чуть выше, чтобы портретное превью дышало */
-    border-right: none;
-    border-bottom: 1px solid #e0d8c8;
+
+  /* --- Превью сверху на всю ширину карточки --- */
+  .card__thumb{
+    width:100%;
+    height:240px;              /* фиксированная высота, чтобы карточка не «прыгала» */
+    padding:0;                 /* в край, без рамки */
+    border-right:none;
+    border-bottom:1px solid #e0d8c8;
   }
-  .card__thumb-paper {
-    aspect-ratio: 3 / 4;       /* как на десктопе — портретная ориентация */
-    max-width: 130px;          /* ширина, при которой высота ≈173px и влезает в 200px */
-    margin: 0 auto;
+  .card__thumb-paper{
+    width:100%;
+    height:100%;
+    aspect-ratio:auto;         /* отключаем портретную пропорцию */
+    max-width:none;            /* и ограничение по ширине */
+    margin:0;
   }
 
   .article--home{padding:20px 22px}
