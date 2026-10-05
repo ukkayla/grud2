@@ -6,26 +6,26 @@
 
 ```
 project/
-├── index.html               — разметка
+├── index.html — разметка
 ├── css/
-│   ├── base.css             — reset, переменные :root, типографика
-│   ├── layout.css           — header, nav, breadcrumbs, footer
-│   ├── components.css       — hero, слайдер, карточки, кнопки, фильтры
-│   └── pages.css            — реестр, поиск, указатели, детальная
+│ ├── base.css — reset, переменные :root, типографика
+│ ├── layout.css — header, nav, breadcrumbs, footer
+│ ├── components.css — hero, слайдер, карточки, кнопки, фильтры, табы
+│ └── pages.css — реестр, поиск, указатели, детальная
 ├── js/
-│   ├── data.js              — массивы documents, archivesData, names, geo
-│   ├── utils.js             — el, escapeHtml, renderEmpty, цитата, toast
-│   ├── router.js            — route, goTo, showPage
-│   ├── components/
-│   │   ├── document-card.js — карточка документа
-│   │   ├── steam-slider.js  — главный слайдер на главной
-│   │   ├── hero-search.js   — живой поиск с подсказками
-│   │   ├── to-top.js        — кнопка «Наверх»
-│   │   ├── copy-cite.js     — кнопка «Скопировать цитату»
-│   │   └── doc-nav.js       — обработчики переходов
-│   └── app.js               — рендер страниц и инициализация
+│ ├── data.js — массивы documents, archivesData, names, geo, sidebarGroups
+│ ├── utils.js — el, escapeHtml, renderEmpty, цитата, toast
+│ ├── router.js — route, goTo, showPage
+│ ├── components/
+│ │ ├── document-card.js — карточка документа
+│ │ ├── steam-slider.js — главный слайдер на главной
+│ │ ├── hero-search.js — живой поиск с подсказками
+│ │ ├── to-top.js — кнопка «Наверх»
+│ │ ├── copy-cite.js — кнопка «Скопировать цитату»
+│ │ └── doc-nav.js — обработчики переходов
+│ └── app.js — рендер страниц и инициализация
 ├── assets/
-│   └── images/              — логотипы и картинки
+│ └── images/ — логотипы, превью документов
 └── README.md
 ```
 
@@ -40,15 +40,17 @@ data → utils → router → components/* → app.js
 `app.js` вызывается последним и запускает инициализацию.
 
 
-## Где менять контент
+## Адаптивность
+Основные контрольные точки:
 
-| Что | Файл |
-|-----|------|
-| Список документов, архивов, персон, топонимов | `js/data.js` |
-| Картинки слайдера на главной | `js/components/steam-slider.js` → `slideBanners` |
-| Ссылки на популярные документы (чипы) | `index.html` → `.hero__hint` |
-| Тексты статей | `index.html` |
-| Стили | `css/*.css` |
+Ширина	    Что меняется
+≤1100px	    Уменьшение ширины правой колонки слайдера
+≤1000px	    Блоки главной в одну колонку, аккордеон для мобильных
+≤860px	    Карточки документов — вертикальная раскладка, превью сверху
+≤760px	    Детальная документа — вертикальная раскладка шапки
+≤686px	    Вкладки «Архивы-хранители» — горизонтальная прокрутка с прилипанием
+≤600px	    Мобильная адаптация поиска, hero-блока
+≤520px	    Мелкие правки: фильтры, поля карточек, кнопки
 
 
 ## Стек
