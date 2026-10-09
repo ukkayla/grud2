@@ -8,7 +8,7 @@ const slideBanners = {
   '1': 'assets/images/sl1.jpg',
   '2': 'assets/images/sl2.jpg',
   '3': 'assets/images/sl3.jpg',
-  '4': 'assets/images/sl4.png',
+  '4': 'assets/images/sl4.jpg',
   '6': 'assets/images/sl5.jpg'
 };
 
