@@ -5,11 +5,11 @@ const featuredSlides = documents
   .map(d => d.n);
 
 const slideBanners = {
-  '1': 'assets/images/s1.jpg',
-  '2': 'assets/images/s2.jpg',
-  '3': 'assets/images/s3.jpg',
-  '4': 'assets/images/s4.png',
-  '6': 'assets/images/s5.jpg'
+  '1': 'assets/images/sl1.jpg',
+  '2': 'assets/images/sl2.jpg',
+  '3': 'assets/images/sl3.jpg',
+  '4': 'assets/images/sl4.png',
+  '6': 'assets/images/sl5.jpg'
 };
 
 function renderSideGallery(doc){
