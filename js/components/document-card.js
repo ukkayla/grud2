@@ -17,11 +17,10 @@ function renderDocumentCard(d){
         </div>
         <div class="card__content">
           <div class="card__fields">
-            <div class="card__field"><span class="card__label">Самоназвание:</span><span class="card__value">${escapeHtml(d.s)}</span></div>
-            <div class="card__field"><span class="card__label">Дата создания:</span><span class="card__value">${escapeHtml(d.d)}</span></div>
-            <div class="card__field"><span class="card__label">Вид документа:</span><span class="card__value card__value--sm">${escapeHtml(d.type)}</span></div>
-            <div class="card__field"><span class="card__label">Место хранения:</span><span class="card__value card__value--sm">${escapeHtml(d.storagePlace.split('\n')[0])}</span></div>
-            <div class="card__field"><span class="card__label">Дата включения:</span><span class="card__value card__value--sm">25 апреля ${d.year} г.</span></div>
+          <div class="card__field"><span class="card__label">Самоназвание документа:</span><span class="card__value">${escapeHtml(d.s)}</span></div>
+          <div class="card__field"><span class="card__label">Дата создания документа:</span><span class="card__value">${escapeHtml(d.d)}</span></div>
+          <div class="card__field"><span class="card__label">Дата включения в реестр:</span><span class="card__value card__value--sm">25 апреля ${d.year} г.</span></div>
+          <div class="card__field"><span class="card__label">Место хранения документа:</span><span class="card__value card__value--sm">${escapeHtml(d.storagePlace.split('\n')[0])}</span></div>
           </div>
           <div class="card__more">Регистрационный номер: <strong style="color:#333">${d.n}</strong></div>
         </div>
